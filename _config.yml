@@ -91,4 +91,4 @@ theme: landscape
 deploy:
   type:git
   repo:https://github.com/han-sdust/han-sdust.github.io
-  branch: master
+  branch:master
