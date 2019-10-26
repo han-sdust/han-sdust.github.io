@@ -5,7 +5,7 @@
   
 
   
-  <title>Han form S.D.U.S.T.</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
@@ -33,7 +33,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Han-SDUST</a>
+        <a href="/" id="logo">Hexo</a>
       </h1>
       
     </div>
@@ -84,18 +84,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>用 Github.io 和 Hexo 创建你的第一个博客</p>
-<p>##申请你的 Github 账号</p>
-<p>点击 Gtihub 注册链接 ；<br>填写账户信息，完成注册并登录（注意：此用户名将作为 Blog 的域名）。<br>创建一个 repo<br>在页面的右上角找到你的头像，点击旁边的 + ，选择 New repository</p>
+<h2 id="申请你的-Github-账号"><a href="#申请你的-Github-账号" class="headerlink" title="申请你的 Github 账号"></a>申请你的 Github 账号</h2><p>点击 Gtihub 注册链接 ；<br>填写账户信息，完成注册并登录（注意：此用户名将作为 Blog 的域名）。<br>创建一个 repo<br>在页面的右上角找到你的头像，点击旁边的 + ，选择 New repository</p>
 <p>填写 repo 的名称时注意格式：username.github.io</p>
 <p>在你的 repo 中找到 Clone or Download 按钮，点击选择 Open in Desktop；此时没有安装 GitHub Desktop 下载安装即可。</p>
 <p>点击 Open in Desktop 按钮后，弹出界面填写本地路径，程序会将 repo 克隆至该路径中。例如 D 根目录下 D:\Blog\username.github.io，然后点击 clone 即可。</p>
 <p>至此，你的个人主页已经可以访问了，链接是 <a href="https://username.github.io/" target="_blank" rel="noopener">https://username.github.io/</a>，接下来进行 Hexo 的操作。</p>
-<p>##安装并配置 Hexo</p>
-<p>###安装 Hexo 之前，你得安装下列应用程序：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Node.js（6.9 及以上）</span><br><span class="line">Git</span><br></pre></td></tr></table></figure>
+<h2 id="安装并配置-Hexo"><a href="#安装并配置-Hexo" class="headerlink" title="安装并配置 Hexo"></a>安装并配置 Hexo</h2><h3 id="安装-Hexo-之前，你得安装下列应用程序："><a href="#安装-Hexo-之前，你得安装下列应用程序：" class="headerlink" title="安装 Hexo 之前，你得安装下列应用程序："></a>安装 Hexo 之前，你得安装下列应用程序：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Node.js（6.9 及以上）</span><br><span class="line">Git</span><br></pre></td></tr></table></figure>
 
-<p>###打开 “ 命令提示符 ” ，输入下列代码安装 Hexo。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="打开-“-命令提示符-”-，输入下列代码安装-Hexo。"><a href="#打开-“-命令提示符-”-，输入下列代码安装-Hexo。" class="headerlink" title="打开 “ 命令提示符 ” ，输入下列代码安装 Hexo。"></a>打开 “ 命令提示符 ” ，输入下列代码安装 Hexo。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <p>安装 Hexo 后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init D:\Blog\hexo_init</span><br><span class="line"><span class="built_in">cd</span> D:\Blog\hexo_init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
@@ -106,8 +102,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hexo is running at http://localhost:4000/.</span><br></pre></td></tr></table></figure>
 <p>此时访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 即可查看预览。</p>
 <p>现在虽然已经可以看到博客的样子了，但是仍需要部署到 Github 才行。</p>
-<p>##部署到 Github</p>
-<p>复制路径 D:\Blog\hexo_init 中的文件到你的 repo 路径 D:\Blog\username.github.io；复制仓库的 HTTPS 地址，打开 repo 路径根目录下的 _config.yml文件，拖动到底部找到 deploy配置，按照以下格式修改并保存：</p>
+<h2 id="部署到-Github"><a href="#部署到-Github" class="headerlink" title="部署到 Github"></a>部署到 Github</h2><p>复制路径 D:\Blog\hexo_init 中的文件到你的 repo 路径 D:\Blog\username.github.io；复制仓库的 HTTPS 地址，打开 repo 路径根目录下的 _config.yml文件，拖动到底部找到 deploy配置，按照以下格式修改并保存：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: &lt;仓库地址&gt;</span><br></pre></td></tr></table></figure>
 <p>这个时候安装 hexo-deployer-git 自动部署发布工具：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm add hexo-deployer-git</span><br></pre></td></tr></table></figure>
