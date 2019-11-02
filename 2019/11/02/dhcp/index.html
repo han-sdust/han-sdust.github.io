@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="hexo,blog," />
+  <meta name="keywords" content="dhcp,linux," />
 
 
 
@@ -77,21 +77,25 @@
 
 
 
-<meta name="description" content="官方文档中的一点小错误">
-<meta name="keywords" content="hexo,blog">
+<meta name="description" content="如何通过VMware搭建DHCP服务器并验证">
+<meta name="keywords" content="dhcp,linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决配置next主题时icons丢失的问题">
-<meta property="og:url" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;2019&#x2F;10&#x2F;28&#x2F;icons&#x2F;index.html">
+<meta property="og:title" content="如何搭建DHCP服务器">
+<meta property="og:url" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;2019&#x2F;11&#x2F;02&#x2F;dhcp&#x2F;index.html">
 <meta property="og:site_name" content="Han from SDUST">
-<meta property="og:description" content="官方文档中的一点小错误">
+<meta property="og:description" content="如何通过VMware搭建DHCP服务器并验证">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;next_icons_q&#x2F;1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;next_icons_q&#x2F;2.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;next_icons_q&#x2F;3.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;next_icons_q&#x2F;4.jpg">
-<meta property="og:updated_time" content="2019-10-28T08:40:32.481Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;vmnetset.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;vmnetset2.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpservercfg.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpclientcfg.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpserverset.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpserversetdhcpd.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpclientipcfg.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpclientip.jpg">
+<meta property="og:updated_time" content="2019-11-02T14:08:59.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;next_icons_q&#x2F;1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;vmnetset.jpg">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://han-sdust.github.io/2019/10/28/icons/"/>
+  <link rel="canonical" href="http://han-sdust.github.io/2019/11/02/dhcp/"/>
 
 
 
 
 
-  <title>解决配置next主题时icons丢失的问题 | Han from SDUST</title>
+  <title>如何搭建DHCP服务器 | Han from SDUST</title>
   
 
 
@@ -244,7 +248,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://han-sdust.github.io/2019/10/28/icons/">
+    <link itemprop="mainEntityOfPage" href="http://han-sdust.github.io/2019/11/02/dhcp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="han">
@@ -261,7 +265,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">解决配置next主题时icons丢失的问题</h1>
+          <h1 class="post-title" itemprop="name headline">如何搭建DHCP服务器</h1>
         
 
         <div class="post-meta">
@@ -273,8 +277,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-28T16:15:45+08:00">
-                2019-10-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-02T21:52:15+08:00">
+                2019-11-02
               </time>
             
 
@@ -311,30 +315,16 @@
       
 
       
-        <p>官方文档中的一点小错误<a id="more"></a></p>
-<p>① 配置菜单，如「首页」、「分类」、「标签」等这些菜单旁边的图标没显示，而都显示成问号：<br>如下图所示：</p>
-<p><img src="/images/next_icons_q/1.jpg" alt="wrong_icons1" title="wrong_icons"></p>
-<p>② 以及「友情链接」图标的设置官方文档包括网上文章写的都是如下：</p>
-<p><img src="/images/next_icons_q/2.jpg" alt="wrong_icons2" title="wrong_icons"></p>
-<p>多方查询后才知道，原因出在这里：<br><code>blog\themes\next\_config.yml</code>即主题的配置文件修改出错：</p>
-<pre><code>menu:
-  home: /
-  about: /about
-  tags: /tags
-  categories: /categories
-  archives: /archives
-
-social:
-  GitHub: https://github.com/han-sdust
-  E-mail: mailto:hanluyang98@foxmail.com</code></pre><p>这是按照一篇网上的文章修改的(网上很多文章都要求将后面的注释删掉，甚至官方文档都是这样写的)</p>
-<p>但是事实上这个不是注释<br>而是指定图标的类型，是不能删除的，因此正确的配置方法是这样的：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line"><span class="attr">  about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line"></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/han-sdust</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  E-mail:</span> <span class="attr">mailto:hanluyang98@foxmail.com</span>  <span class="string">||</span> <span class="string">envelope</span></span><br></pre></td></tr></table></figure>
-
-<p>实际上在操作时，我还遇到了另一个问题，图标恢复后，对应的按钮会失效，打开地址会变为/menu%20/，从而找不到页面</p>
-<p>这个问题是空格导致的，这样就可以了</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/||</span> <span class="string">home</span></span><br><span class="line"><span class="attr">  about:</span> <span class="string">/about||</span> <span class="string">user</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives||</span> <span class="string">archive</span></span><br></pre></td></tr></table></figure>
-
-<p>结果：<br><img src="/images/next_icons_q/3.jpg" alt="right_icons3" title="right_icons"><br><img src="/images/next_icons_q/4.jpg" alt="right_icons4" title="right_icons"></p>
+        <p>如何通过VMware搭建DHCP服务器并验证<a id="more"></a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="vm网络设置"><a href="#vm网络设置" class="headerlink" title="vm网络设置"></a>vm网络设置</h3><p>将虚拟网卡host模式的dhcp服务关闭，防止与后续验证的dhcp服务冲突<br><img src="/images/dhcp/vmnetset.jpg" alt="vm net" title="VMware网卡设置"><br><img src="/images/dhcp/vmnetset2.jpg" alt="vm net2" title="关闭dhcp服务"></p>
+<h3 id="虚拟机的配置"><a href="#虚拟机的配置" class="headerlink" title="虚拟机的配置"></a>虚拟机的配置</h3><p>在VMware中安装两台虚拟机，这里使用的操作系统为centos7，具体配置如下：</p>
+<p>作为dhcp服务器的虚拟机安装两块网卡<br>第一块设为NAT模式，用于从宿主机获取网络<br>第二块设为host-only，用于提供dhcp服务<br><img src="/images/dhcp/dhcpservercfg.jpg" alt="dhcp server" title="server硬件配置"></p>
+<p>作为dhcp客户机的虚拟机安装一块网卡，设为host-only<br><img src="/images/dhcp/dhcpclientcfg.jpg" alt="dhcp client" title="client硬件配置"></p>
+<h3 id="dhcp服务器配置"><a href="#dhcp服务器配置" class="headerlink" title="dhcp服务器配置"></a>dhcp服务器配置</h3><h4 id="设置网络"><a href="#设置网络" class="headerlink" title="设置网络"></a>设置网络</h4><p>使用NAT模式网卡获取ip地址连接网络<br>安装dhcp服务器：<code>yum -y install dhcp</code><br>客户机不用安装<br>配置host-only网卡信息，手动设置服务器地址<br>此处我设ip地址为 <code>192.168.93.100</code></p>
+<h4 id="编辑DHCP服务器配置文件"><a href="#编辑DHCP服务器配置文件" class="headerlink" title="编辑DHCP服务器配置文件"></a>编辑DHCP服务器配置文件</h4><p><code>vim /etc/dhcp/dhcpd.conf</code><br><img src="/images/dhcp/dhcpserverset.jpg" alt="command" title="设置命令"><br>内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">subnet 192.168.93.0 netmask 255.255.255.0 &#123;</span><br><span class="line">    range    192.168.93.101    192.168.0.254;</span><br><span class="line">    option domain-name-servers 192.168.0.100;</span><br><span class="line">    option domain-name <span class="string">"test.cn"</span>;</span><br><span class="line">    option routers 192.168.93.1;</span><br><span class="line">    option broadcast-address 192.168.93.255;</span><br><span class="line">    default-lease-time 600;</span><br><span class="line">    max-lease-time 7200;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/dhcp/dhcpserversetdhcpd.jpg" alt="dhcpd.conf" title="设置dhcpd文件"></p>
+<h3 id="验证dhcp成功"><a href="#验证dhcp成功" class="headerlink" title="验证dhcp成功"></a>验证dhcp成功</h3><p>开启客户机，设置ipv4地址为自动获取<br><img src="/images/dhcp/dhcpclientipcfg.jpg" alt="dhcp" title="设置ipv4"><br>这样就说明配置成功了<br><img src="/images/dhcp/dhcpclientip.jpg" alt="dhcp2" title="查看自动获取的地址"></p>
 
       
     </div>
@@ -352,9 +342,9 @@ social:
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/dhcp/" rel="tag"># dhcp</a>
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
         </div>
       
@@ -367,8 +357,8 @@ social:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/27/markdown-code/" rel="next" title="markdown_code">
-                <i class="fa fa-chevron-left"></i> markdown_code
+              <a href="/2019/10/28/icons/" rel="next" title="解决配置next主题时icons丢失的问题">
+                <i class="fa fa-chevron-left"></i> 解决配置next主题时icons丢失的问题
               </a>
             
           </div>
@@ -376,10 +366,6 @@ social:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/02/dhcp/" rel="prev" title="如何搭建DHCP服务器">
-                如何搭建DHCP服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -431,8 +417,17 @@ social:
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,6 +498,22 @@ social:
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vm网络设置"><span class="nav-number">1.1.</span> <span class="nav-text">vm网络设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机的配置"><span class="nav-number">1.2.</span> <span class="nav-text">虚拟机的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dhcp服务器配置"><span class="nav-number">1.3.</span> <span class="nav-text">dhcp服务器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置网络"><span class="nav-number">1.3.1.</span> <span class="nav-text">设置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑DHCP服务器配置文件"><span class="nav-number">1.3.2.</span> <span class="nav-text">编辑DHCP服务器配置文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证dhcp成功"><span class="nav-number">1.4.</span> <span class="nav-text">验证dhcp成功</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
