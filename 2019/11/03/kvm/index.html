@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="dhcp,linux," />
+  <meta name="keywords" content="linux,kvm," />
 
 
 
@@ -77,25 +77,21 @@
 
 
 
-<meta name="description" content="通过VMware搭建DHCP服务器并验证">
-<meta name="keywords" content="dhcp,linux">
+<meta name="description" content="在centOS中通过kvm安装虚拟机">
+<meta name="keywords" content="linux,kvm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建DHCP服务器">
-<meta property="og:url" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;2019&#x2F;11&#x2F;02&#x2F;dhcp&#x2F;index.html">
+<meta property="og:title" content="如何在linux中通过kvm安装虚拟机">
+<meta property="og:url" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;2019&#x2F;11&#x2F;03&#x2F;kvm&#x2F;index.html">
 <meta property="og:site_name" content="Han from SDUST">
-<meta property="og:description" content="通过VMware搭建DHCP服务器并验证">
+<meta property="og:description" content="在centOS中通过kvm安装虚拟机">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;vmnetset.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;vmnetset2.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpservercfg.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpclientcfg.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpserverset.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpserversetdhcpd.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpclientipcfg.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;dhcpclientip.jpg">
-<meta property="og:updated_time" content="2019-11-03T06:04:40.470Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;kvm&#x2F;vmx.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;kvm&#x2F;mod.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;kvm&#x2F;kvm.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;kvm&#x2F;vnc.jpg">
+<meta property="og:updated_time" content="2019-11-03T06:48:37.214Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;dhcp&#x2F;vmnetset.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;han-sdust.github.io&#x2F;images&#x2F;kvm&#x2F;vmx.jpg">
 
 
 
@@ -125,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://han-sdust.github.io/2019/11/02/dhcp/"/>
+  <link rel="canonical" href="http://han-sdust.github.io/2019/11/03/kvm/"/>
 
 
 
 
 
-  <title>如何搭建DHCP服务器 | Han from SDUST</title>
+  <title>如何在linux中通过kvm安装虚拟机 | Han from SDUST</title>
   
 
 
@@ -248,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://han-sdust.github.io/2019/11/02/dhcp/">
+    <link itemprop="mainEntityOfPage" href="http://han-sdust.github.io/2019/11/03/kvm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="han">
@@ -265,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何搭建DHCP服务器</h1>
+          <h1 class="post-title" itemprop="name headline">如何在linux中通过kvm安装虚拟机</h1>
         
 
         <div class="post-meta">
@@ -277,8 +273,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-02T21:52:15+08:00">
-                2019-11-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-03T14:52:15+08:00">
+                2019-11-03
               </time>
             
 
@@ -315,16 +311,39 @@
       
 
       
-        <p>通过VMware搭建DHCP服务器并验证<a id="more"></a></p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="vm网络设置"><a href="#vm网络设置" class="headerlink" title="vm网络设置"></a>vm网络设置</h3><p>将虚拟网卡host模式的dhcp服务关闭，防止与后续验证的dhcp服务冲突<br><img src="/images/dhcp/vmnetset.jpg" alt="vm net" title="VMware网卡设置"><br><img src="/images/dhcp/vmnetset2.jpg" alt="vm net2" title="关闭dhcp服务"></p>
-<h3 id="虚拟机的配置"><a href="#虚拟机的配置" class="headerlink" title="虚拟机的配置"></a>虚拟机的配置</h3><p>在VMware中安装两台虚拟机，这里使用的操作系统为centos7，具体配置如下：</p>
-<p>作为dhcp服务器的虚拟机安装两块网卡<br>第一块设为NAT模式，用于从宿主机获取网络<br>第二块设为host-only，用于提供dhcp服务<br><img src="/images/dhcp/dhcpservercfg.jpg" alt="dhcp server" title="server硬件配置"></p>
-<p>作为dhcp客户机的虚拟机安装一块网卡，设为host-only<br><img src="/images/dhcp/dhcpclientcfg.jpg" alt="dhcp client" title="client硬件配置"></p>
-<h3 id="dhcp服务器配置"><a href="#dhcp服务器配置" class="headerlink" title="dhcp服务器配置"></a>dhcp服务器配置</h3><h4 id="设置网络"><a href="#设置网络" class="headerlink" title="设置网络"></a>设置网络</h4><p>使用NAT模式网卡获取ip地址连接网络<br>安装dhcp服务器：<code>yum -y install dhcp</code><br>客户机不用安装<br>配置host-only网卡信息，手动设置服务器地址<br>此处我设ip地址为 <code>192.168.93.100</code></p>
-<h4 id="编辑DHCP服务器配置文件"><a href="#编辑DHCP服务器配置文件" class="headerlink" title="编辑DHCP服务器配置文件"></a>编辑DHCP服务器配置文件</h4><p><code>vim /etc/dhcp/dhcpd.conf</code><br><img src="/images/dhcp/dhcpserverset.jpg" alt="command" title="设置命令"><br>内容如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">subnet 192.168.93.0 netmask 255.255.255.0 &#123;</span><br><span class="line">    range    192.168.93.101    192.168.0.254;</span><br><span class="line">    option domain-name-servers 192.168.0.100;</span><br><span class="line">    option domain-name <span class="string">"test.cn"</span>;</span><br><span class="line">    option routers 192.168.93.1;</span><br><span class="line">    option broadcast-address 192.168.93.255;</span><br><span class="line">    default-lease-time 600;</span><br><span class="line">    max-lease-time 7200;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/dhcp/dhcpserversetdhcpd.jpg" alt="dhcpd.conf" title="设置dhcpd文件"></p>
-<h3 id="验证dhcp成功"><a href="#验证dhcp成功" class="headerlink" title="验证dhcp成功"></a>验证dhcp成功</h3><p>开启客户机，设置ipv4地址为自动获取<br><img src="/images/dhcp/dhcpclientipcfg.jpg" alt="dhcp" title="设置ipv4"><br>这样就说明配置成功了<br><img src="/images/dhcp/dhcpclientip.jpg" alt="dhcp2" title="查看自动获取的地址"></p>
+        <p>在centOS中通过kvm安装虚拟机<a id="more"></a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h3><p>按照常规步骤安装即可，唯一需要注意的点是需要在cpu选项处，将虚拟化选项全部打开</p>
+<h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><p>查看硬件是否支持虚拟化<br><code># egrep &#39;(vmx|svm)&#39; /proc/cpuinfo</code></p>
+<p><img src="/images/kvm/vmx.jpg" alt="vmx" title="vmx"></p>
+<h3 id="安装-KVM"><a href="#安装-KVM" class="headerlink" title="安装 KVM"></a>安装 KVM</h3><p>由于 Linux 内核已经将 KVM 收录了，在安装系统时已经加入了 KVM ，我们只需要在命令行模式下启用 KVM 即可：</p>
+<p>启用 KVM 模块<br><code># modprobe kvm</code></p>
+<p>功能区分 intel/amd 的启用：</p>
+<p><code># modprobe kvm-intel</code></p>
+<p>查看kvm模块运行状态<br><code># lsmod |grep kvm</code></p>
+<p><img src="/images/kvm/mod.jpg" alt="mod" title="mod状态"></p>
+<h3 id="安装-KVM-所需组件"><a href="#安装-KVM-所需组件" class="headerlink" title="安装 KVM 所需组件"></a>安装 KVM 所需组件</h3><p>KVM 虚拟机的创建依赖 qemu-kvm，它补充了 kvm 技术的不足，而且在性能上对 kvm 进行了优化</p>
+<p>同时可使用virt-manager，virt-viewer或tigervnc等工具来管理虚拟机<br><code># yum install -y qemu-kvm</code><br><code># yum install -y tigervnc</code></p>
+<h2 id="使用-qemu-kvm-管理-KVM-虚拟机"><a href="#使用-qemu-kvm-管理-KVM-虚拟机" class="headerlink" title="使用 qemu-kvm 管理 KVM 虚拟机"></a>使用 qemu-kvm 管理 KVM 虚拟机</h2><p>qemu-kvm 位于 /usr/libexec 目录中。由于此目录不属于 PATH 环境变量，故无法直接使用，这样也阻止了可以直接使用 qemu 作为创建并管理虚拟机。如若想使用qemu 虚拟机，可以通过将 /usr/libexec/qemu-kvm 链接为 /usr/bin/qemu 实现<br><code># ln -sv  /usr/libexec/qemu-kvm  /usr/bin/qemu-kvm</code></p>
+<p>这样就可以使用qemu-kvm命令了<br>qemu-kvm 命令使用格式为“ qemu-kvm [options] [disk_image] ”，其选项非常多，不过，大致可分为如下几类：</p>
+<pre><code>标准选项；
+USB选项；
+显示选项；
+i386平台专用选项；
+网络选项；
+字符设备选项；
+蓝牙相关选项；
+Linux系统引导专用选项；
+调试/专家模式选项；
+PowerPC专用选项；
+Sparc32专用选项；</code></pre><h2 id="使用-qemu-kvm-安装虚拟机"><a href="#使用-qemu-kvm-安装虚拟机" class="headerlink" title="使用 qemu-kvm 安装虚拟机"></a>使用 qemu-kvm 安装虚拟机</h2><p>测试安装使用cirrOS</p>
+<h3 id="cirros-镜像文件下载"><a href="#cirros-镜像文件下载" class="headerlink" title="cirros 镜像文件下载"></a>cirros 镜像文件下载</h3><p>镜像下载</p>
+<p>32 位镜像下载地址： <a href="https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-i386-disk.img" target="_blank" rel="noopener">https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-i386-disk.img</a></p>
+<p>64 位镜像的下载地址： <a href="https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img" target="_blank" rel="noopener">https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img</a></p>
+<p>我这里使用的是 cirros-0.3.0-x86_64-disk.img<br><code># wget https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img</code></p>
+<h3 id="安装启动-cirros-虚拟机"><a href="#安装启动-cirros-虚拟机" class="headerlink" title="安装启动 cirros 虚拟机"></a>安装启动 cirros 虚拟机</h3><p><code># mv cirros-0.3.0-x86_64-disk.img  /kvm/images</code></p>
+<p>启动 cirros 虚拟机系统：<br><code># qemu-kvm -m 128 -name cirros -drive file=/kvm/images/cirros-0.3.0-x86_64-disk.img,media=disk,format=qcow2,if=ide-net nic -net tap,ifname=vnet0,script=/etc/qemu-ifup,downscript=/etc/qemu-ifdown -boot c</code></p>
+<p><img src="/images/kvm/kvm.jpg" alt="kvm" title="kvm"></p>
+<p>启动完成后，通过 vncviewer 连接我们启动的虚拟机：<br><img src="/images/kvm/vnc.jpg" alt="vnc" title="vnc"></p>
 
       
     </div>
@@ -342,9 +361,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dhcp/" rel="tag"># dhcp</a>
-          
             <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/kvm/" rel="tag"># kvm</a>
           
         </div>
       
@@ -357,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/28/icons/" rel="next" title="解决配置next主题时icons丢失的问题">
-                <i class="fa fa-chevron-left"></i> 解决配置next主题时icons丢失的问题
+              <a href="/2019/11/02/dhcp/" rel="next" title="如何搭建DHCP服务器">
+                <i class="fa fa-chevron-left"></i> 如何搭建DHCP服务器
               </a>
             
           </div>
@@ -366,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/03/kvm/" rel="prev" title="如何在linux中通过kvm安装虚拟机">
-                如何在linux中通过kvm安装虚拟机 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vm网络设置"><span class="nav-number">1.1.</span> <span class="nav-text">vm网络设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机的配置"><span class="nav-number">1.2.</span> <span class="nav-text">虚拟机的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dhcp服务器配置"><span class="nav-number">1.3.</span> <span class="nav-text">dhcp服务器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置网络"><span class="nav-number">1.3.1.</span> <span class="nav-text">设置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑DHCP服务器配置文件"><span class="nav-number">1.3.2.</span> <span class="nav-text">编辑DHCP服务器配置文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证dhcp成功"><span class="nav-number">1.4.</span> <span class="nav-text">验证dhcp成功</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机安装"><span class="nav-number">1.1.</span> <span class="nav-text">虚拟机安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看配置"><span class="nav-number">1.2.</span> <span class="nav-text">查看配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-KVM"><span class="nav-number">1.3.</span> <span class="nav-text">安装 KVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-KVM-所需组件"><span class="nav-number">1.4.</span> <span class="nav-text">安装 KVM 所需组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-qemu-kvm-管理-KVM-虚拟机"><span class="nav-number">2.</span> <span class="nav-text">使用 qemu-kvm 管理 KVM 虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-qemu-kvm-安装虚拟机"><span class="nav-number">3.</span> <span class="nav-text">使用 qemu-kvm 安装虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cirros-镜像文件下载"><span class="nav-number">3.1.</span> <span class="nav-text">cirros 镜像文件下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装启动-cirros-虚拟机"><span class="nav-number">3.2.</span> <span class="nav-text">安装启动 cirros 虚拟机</span></a></li></ol></li></ol></div>
             
 
           </div>
