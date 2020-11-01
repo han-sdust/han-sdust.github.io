@@ -5,7 +5,8 @@
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style></head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2019-11-03T06:52:15.000Z" id="date"> 2019-11-03</time></span><br><span>updated:<time datetime="2019-11-03T06:48:37.214Z" id="updated"> 2019-11-03</time></span></div><h1>如何在linux中通过kvm安装虚拟机</h1><hr></div><div id="post-content"></p>
+}</style><link rel="alternate" href="/atom.xml" title="Han from SDUST" type="application/atom+xml">
+</head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2019-11-03T06:52:15.000Z" id="date"> 2019-11-03</time></span><br><span>updated:<time datetime="2019-11-03T06:48:37.214Z" id="updated"> 2019-11-03</time></span></div><h1>如何在linux中通过kvm安装虚拟机</h1><hr></div><div id="post-content"></p>
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h3><p>按照常规步骤安装即可，唯一需要注意的点是需要在cpu选项处，将虚拟化选项全部打开</p>
 <h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><p>查看硬件是否支持虚拟化<br><code># egrep &#39;(vmx|svm)&#39; /proc/cpuinfo</code></p>
 <p><img src="/images/kvm/vmx.jpg" alt="vmx" title="vmx"></p>

@@ -5,7 +5,8 @@
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style></head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2019-11-02T13:52:15.000Z" id="date"> 2019-11-02</time></span><br><span>updated:<time datetime="2019-11-03T06:04:40.470Z" id="updated"> 2019-11-03</time></span></div><h1>如何搭建DHCP服务器</h1><hr></div><div id="post-content"></p>
+}</style><link rel="alternate" href="/atom.xml" title="Han from SDUST" type="application/atom+xml">
+</head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2019-11-02T13:52:15.000Z" id="date"> 2019-11-02</time></span><br><span>updated:<time datetime="2019-11-03T06:04:40.470Z" id="updated"> 2019-11-03</time></span></div><h1>如何搭建DHCP服务器</h1><hr></div><div id="post-content"></p>
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="vm网络设置"><a href="#vm网络设置" class="headerlink" title="vm网络设置"></a>vm网络设置</h3><p>将虚拟网卡host模式的dhcp服务关闭，防止与后续验证的dhcp服务冲突<br><img src="/images/dhcp/vmnetset.jpg" alt="vm net" title="VMware网卡设置"><br><img src="/images/dhcp/vmnetset2.jpg" alt="vm net2" title="关闭dhcp服务"></p>
 <h3 id="虚拟机的配置"><a href="#虚拟机的配置" class="headerlink" title="虚拟机的配置"></a>虚拟机的配置</h3><p>在VMware中安装两台虚拟机，这里使用的操作系统为centos7，具体配置如下：</p>
 <p>作为dhcp服务器的虚拟机安装两块网卡<br>第一块设为NAT模式，用于从宿主机获取网络<br>第二块设为host-only，用于提供dhcp服务<br><img src="/images/dhcp/dhcpservercfg.jpg" alt="dhcp server" title="server硬件配置"></p>
